@@ -1,7 +1,7 @@
 var app = angular.module('empanadapp');
 
 //sacar dependencias de lodash de todos los factories, hacerlo general para toda la app
-app.factory('EmpanadasService', ["lodash", function(_){
+app.factory('EmpanadasService', [function(){
   var predefined = [
     {
       id: 1,
@@ -25,9 +25,13 @@ app.factory('EmpanadasService', ["lodash", function(_){
     }
   ];
   var empanadas = _.cloneDeep(predefined);
+  var currentId = predefined.length+1;
 
-//Aca creo que sacando todo del return, funciona igual
- return {
+  var nextId = function(){
+    return currentId++;
+  };
+
+  return {
     getEmpanadas: function () {
       return empanadas;
     },
@@ -37,17 +41,10 @@ app.factory('EmpanadasService', ["lodash", function(_){
        });
     },
     add: function (nombre) {
-      if (empanadas.length == 0) {
-        var max = predefined.length
-      }
-      else {
-        var max = _(empanadas).map(function (e){
-          return e.id
-        }).max();        
-      }
+      var id = nextId();
 
       var nueva = {
-        id: max + 1,
+        id: id,
         nombre: nombre
       };
 
@@ -64,10 +61,14 @@ app.factory('EmpanadasService', ["lodash", function(_){
 }]);
 
 
-app.factory('PersonasService', ["Persona", "lodash", function(Persona, _){
+app.factory('PersonasService', ["Persona", function(Persona){
+    var currentId = 1;
     var personas = [];
+    var nextId = function(){
+      return currentId++;
+    };
 
-   return {
+    return {
       getPersonas: function () {
         return personas;
       },
@@ -78,16 +79,10 @@ app.factory('PersonasService', ["Persona", "lodash", function(Persona, _){
       },
       add: function (nombre) {
         var nuevo = new Persona(nombre);
-        if (personas.length == 0) {
-          var max = 0
-        }
-        else {
-          var max = _(personas).map(function (e){
-            return e.id
-          }).max();          
-        }
+        
+        var id = nextId();
 
-        nuevo.id = max + 1;
+        nuevo.id = id;
         personas.push(nuevo);
         return nuevo;
       },
@@ -97,7 +92,7 @@ app.factory('PersonasService', ["Persona", "lodash", function(Persona, _){
     };
 }]);
 
-app.factory('Persona', ["lodash", function(_){
+app.factory('Persona', [ function(){
   function Persona(nombre) {
     this.nombre = nombre;
     this.id = -1;
@@ -130,7 +125,3 @@ app.factory('Persona', ["lodash", function(_){
 
   return Persona
 }]);
-
-app.factory('lodash', function(){
-  return window._
-});
