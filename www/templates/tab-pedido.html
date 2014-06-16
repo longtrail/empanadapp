@@ -1,5 +1,14 @@
 <ion-view title="Pedido">
   <ion-content class="has-header">
-    
+    <button class="button button-block button-energized" ng-click="showPopup()">Agregate papa!</button>
+  	<div ng-if="personas.length == 0">
+  		<p>No hay personas</p>
+  	</div>
+    <div class="card" style="width: 43%; margin: 10px; float: left; " ng-repeat="persona in personas">
+    	<div class="item item-text-wrap">
+	    	<h2>{{ persona.nombre }}</h2>
+	    	<p>{{ persona.cantEmpanadas() }}</p>
+    	</div>
+    </div>
   </ion-content>
 </ion-view>
