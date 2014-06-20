@@ -1,0 +1,24 @@
+<ion-view title="LOGO">
+  <ion-content class="has-header">
+
+    <!-- header datos persona -->
+    <div class="bar bar-header bar-light">
+  	  <h1 class="title">
+
+  	  	<span style="float:left;"><i class="icon ion-ios7-arrow-left"></i> Volver</span>
+  	  	<span><i class="icon ion-person"></i> {{persona.nombre}} </span>
+  	 	<span> {{cantEmpanadas}}  empanadas</span>
+
+  	  </h1>
+	</div>
+	
+	<!-- muestro empanadas -->
+	<div class="card" style="width: 43%; margin: 10px; float: left; " ng-repeat="empanada in empanadas">
+    	<div class="item item-text-wrap">
+	    	<h2>{{ empanada.nombre }}</h2>
+	    	<p>{{ persona.cantEmpanadas(empanada.id) }}</p>
+    	</div>
+    </div>
+
+  </ion-content>
+</ion-view>

@@ -60,8 +60,8 @@ angular.module('empanadapp', ['ionic'])
     .state('tab.pedido-persona', {
       url: '/pedido/:personaId',
       views: {
-        'tab-pedido-persona': {
-          templateUrl: 'templates/pedido-persona.html',
+        'tab-pedido': {
+          templateUrl: 'templates/tab-pedido-persona.html',
           controller: 'PedidoPersonaCtrl'
         }
       }
