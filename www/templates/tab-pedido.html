@@ -4,7 +4,12 @@
   	<div ng-if="personas.length == 0">
   		<p>No hay personas</p>
   	</div>
-    <div class="card" style="width: 43%; margin: 10px; float: left; " ng-repeat="persona in personas">
+    <div 
+    	class="card"
+    	style="width: 43%; margin: 10px; float: left;"
+    	ng-repeat="persona in personas"
+    	ng-click="goPersona(persona.id)">
+
     	<div class="item item-text-wrap">
 	    	<h2>{{ persona.nombre }}</h2>
 	    	<p>{{ persona.cantEmpanadas() }}</p>

@@ -92,7 +92,7 @@ app.factory('PersonasService', ["Persona", function(Persona){
     };
 }]);
 
-app.factory('Persona', [ function(){
+app.factory('Persona', ['EmpanadasService', function(EmpanadasService){
   function Persona(nombre) {
     this.nombre = nombre;
     this.id = -1;
@@ -100,6 +100,18 @@ app.factory('Persona', [ function(){
   };
 
   Persona.prototype = {
+    getEmpanadas: function(){
+      var empanadas = [];
+      
+      _(persona.empanadas).chain().keys().each(function(idEmpanada){
+        var id = parseInt(idEmpanada)
+        var empanada = EmpanadasService.getEmpanada(id);
+        empanada.cantidad = this.empanadas[id];
+        empanadas.push(empanada)
+      });
+
+      return empanadas;
+    },
     addEmpanada: function(id){
       this.empanadas[id] = this.cantEmpanadas(id) + 1;
       return this;

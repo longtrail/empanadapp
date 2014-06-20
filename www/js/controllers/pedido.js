@@ -4,7 +4,7 @@ app.controller('PedidoCtrl', ["$scope", "PersonasService", "PopUpBuilder", "$sta
 
 	$scope.agregar = Personas.add;
 
-	$scope.empaname = function(id){
+	$scope.goPersona = function(id){
 		$state.go('tab.pedido-persona', {personaId: id})
 	};
 
