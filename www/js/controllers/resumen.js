@@ -25,22 +25,6 @@ app.controller('ResumenCtrl', ["$scope",'PersonasService','EmpanadasService', fu
 
     $scope.personas = PersonasService.getPersonas();
 
-    _($scope.personas).each(function(persona){
-      console.log(persona);
-      persona.empanadas = persona.getEmpanadas();
-    });
-
-    /*var Personas = PersonasService.getPersonas();
-    empanadas = _.chain(Personas)
-      .map(function(persona){ return persona.getEmpanadas })
-      .
-    //Adapto la coleccion de empanadas que me devuelve el service a una coleccion de elementos {cantidad,gusto}
-   
-  	/*$scope.personas = [
-  		{nombre:"Alan", empanadas:[{cantidad:"5", gusto:"Carne"},{cantidad:"3",gusto:"Pollo"}]},
-		{nombre:"Guido", empanadas:[{cantidad:"2", gusto:"Carne"},{cantidad:"4",gusto:"Jamon y Queso"}]}
-	 ];
-*/
    $scope.getGustoEmpanada=function(id){
       //return EmpanadasService.getEmpanada(id).gusto;
    }

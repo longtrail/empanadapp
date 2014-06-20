@@ -12,10 +12,10 @@
     </span>
 </ion-item>
 <ion-item class="item-accordion"
-ng-repeat="empanada in persona.empanadas"
+ng-repeat="empanada in persona.getEmpanadas()"
 ng-show="isPersonaShown(persona)">
 <span class="badge badge-assertive">{{empanada.cantidad}}</span>
-{{empanada.gusto}}
+{{empanada.nombre}}
 </ion-item>
 </div>
 </ion-list>

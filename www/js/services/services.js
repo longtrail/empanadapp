@@ -100,13 +100,15 @@ app.factory('Persona', ['EmpanadasService', function(EmpanadasService){
   };
 
   Persona.prototype = {
+   
     getEmpanadas: function(){
+       var self= this;
       var empanadas = [];
       
-      _(persona.empanadas).chain().keys().each(function(idEmpanada){
+      _(self.empanadas).chain().keys().each(function(idEmpanada){
         var id = parseInt(idEmpanada)
         var empanada = EmpanadasService.getEmpanada(id);
-        empanada.cantidad = this.empanadas[id];
+        empanada.cantidad = self.empanadas[id];
         empanadas.push(empanada)
       });
 
