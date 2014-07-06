@@ -125,30 +125,19 @@ app.factory('Persona', ['EmpanadasService', function(EmpanadasService){
 
   /* Metodos que entiende el service*/
   Persona.prototype = {
-<<<<<<< Updated upstream
-   
-=======
 
     /* Devuelve todas las empanadas de la persona en un objeto*/
->>>>>>> Stashed changes
     getEmpanadas: function(){
        var self= this;
       var empanadas = [];
       
-<<<<<<< Updated upstream
       _(self.empanadas).chain().keys().each(function(idEmpanada){
         var id = parseInt(idEmpanada)
         var empanada = EmpanadasService.getEmpanada(id);
         empanada.cantidad = self.empanadas[id];
-        empanadas.push(empanada)
-=======
-      _(persona.empanadas).chain().keys().each(function(idEmpanada){
-        var id = parseInt(idEmpanada);
-        var empanada = EmpanadasService.getEmpanada(id);
-        empanada.cantidad = this.empanadas[id];
         empanadas.push(empanada);
->>>>>>> Stashed changes
       });
+
       return empanadas;
     },
 
