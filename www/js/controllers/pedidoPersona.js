@@ -2,11 +2,11 @@ var app = angular.module('empanadapp');
 app.controller('PedidoPersonaCtrl',  ["$scope", "PersonasService", "EmpanadasService", "PopUpBuilder", "$state", function($scope, pServ, eServ, popUp, $stateParam) {
 
 	//harcodeo ID y agrego persona. desp sacar
-	var id = 1;
-	personaNueva = pServ.add('hitler');
+	//var id = 1;
+	//personaNueva = pServ.add('hitler');
 
 	//Recibo persona de la vista de personas
-	//var id = $state(personaId);
+	var id = $state(personaId);
 
 	/*Para popUp*/
 	popUp.submit = function(data) {
