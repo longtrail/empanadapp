@@ -4,6 +4,7 @@ app.controller('PedidoCtrl', ["$scope", "PersonasService", "PopUpBuilder", "$sta
 
 	$scope.agregar = Personas.add;
 
+	//cambia de tab a pedidoPersona al agregar nueva persona
 	$scope.goPersona = function(id){
 		$state.go('tab.pedido-persona', {personaId: id})
 	};
