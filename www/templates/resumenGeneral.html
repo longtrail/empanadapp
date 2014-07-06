@@ -1,1 +1,7 @@
-<h1>Hola gato</h1>
+<div class="list">
+
+  <div ng-repeat="(gusto, cantidad) in getEmpanadasGeneral()" class="item ">
+  	{{gusto}}
+	<span class="badge badge-assertive">{{cantidad}}</span>
+  </div>
+</div>

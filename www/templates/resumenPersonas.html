@@ -8,7 +8,7 @@
 	&nbsp;
 	{{persona.nombre}}
 	<span class="item-note">
-      Total: {{persona.totalEmpanadas()*5 | currency}}
+      Total: <b>{{persona.totalEmpanadas()*(costos.unitario)+costos.extra/cantPersonas | currency}}</b>
     </span>
 </ion-item>
 <ion-item class="item-accordion"

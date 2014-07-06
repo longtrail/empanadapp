@@ -1,5 +1,19 @@
 var app = angular.module('empanadapp');
 
+app.factory('Costos', [function(){
+  var costo = {
+    unitario: 0,
+    extra: 0
+  }
+
+  return {
+    getCostos: function(){
+      return costo;
+    }
+  }
+}]);
+
+
 /*Service que maneja las empanadas*/
 app.factory('EmpanadasService', [function(){
   var predefined = [
@@ -168,7 +182,9 @@ app.factory('Persona', ['EmpanadasService', function(EmpanadasService){
     /*Devuelve el total de las empanadas que tiene la persona*/
     totalEmpanadas: function(){
       var total = 0;
+
       _.forIn(this.empanadas, function(value, key) {
+
         total += value;
       });
 

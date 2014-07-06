@@ -1,5 +1,6 @@
 var app = angular.module('empanadapp');
-app.controller('ResumenCtrl', ["$scope",'PersonasService','EmpanadasService', function($scope, PersonasService,EmpanadasService) {
+app.controller('ResumenCtrl', ["$scope",'PersonasService','EmpanadasService','Costos', function($scope, PersonasService,EmpanadasService, Costos) {
+  $scope.costos = Costos.getCostos();
 
 	$scope.resumenes =
     [ { nombre: 'resumenGeneral', url: 'templates/resumenGeneral.html'},
@@ -13,21 +14,26 @@ app.controller('ResumenCtrl', ["$scope",'PersonasService','EmpanadasService', fu
   		$scope.resumen = $scope.resumenes[1];
   	}
 
-  	var kova = PersonasService.add('Kova');
-    kova.addEmpanada(2);
-    kova.addEmpanada(2);
-    kova.addEmpanada(3);
-    var guido = PersonasService.add('Guido');
-    guido.addEmpanada(1);
-    guido.addEmpanada(3);
-
 
     $scope.personas = PersonasService.getPersonas();
+    $scope.cantPersonas = $scope.personas.length;
 
    $scope.getGustoEmpanada=function(id){
       //return EmpanadasService.getEmpanada(id).gusto;
    }
 
+   $scope.getEmpanadasGeneral=function(){
+      var Empanadas = {};
+      var Personas = PersonasService.getPersonas();
+      _(Personas).forEach(function(persona){
+        var empanadas = persona.getEmpanadas();
+        empanadas.forEach(function (empanada){
+          Empanadas[ empanada.nombre ] ? Empanadas[ empanada.nombre ] += empanada.cantidad : Empanadas[ empanada.nombre ] = empanada.cantidad;
+        });
+      });
+      console.log(Empanadas);
+      return Empanadas;
+   }
 
 
   $scope.togglePersona = function(persona) {
