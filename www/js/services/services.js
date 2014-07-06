@@ -168,8 +168,8 @@ app.factory('Persona', ['EmpanadasService', function(EmpanadasService){
     /*Devuelve el total de las empanadas que tiene la persona*/
     totalEmpanadas: function(){
       var total = 0;
-      _.forIn(this.empanadas, function() {
-        total += this.cantidad;
+      _.forIn(this.empanadas, function(value, key) {
+        total += value;
       });
       return total;
     }

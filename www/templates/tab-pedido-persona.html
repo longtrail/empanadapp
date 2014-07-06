@@ -1,30 +1,26 @@
-<ion-view title="LOGO">
-  <ion-content class="has-header">
+<ion-content class="has-header">
 
     <!-- header datos persona -->
     <div class="bar bar-header bar-light">
   	  <h1 class="title">
- 	  	  <span style="float:left;"><i class="icon ion-ios7-arrow-left"></i> Volver</span>
-  	  	<span><i class="icon ion-person"></i> {{persona.nombre}} </span>
-  	 	  <span> {{cantEmpanadas}} empanadas</span>
+  	  	<span class='float-l'><i class="icon ion-person"></i> {{persona.nombre}} </span>
+        <img class='float-r margin-top-10 empanada-icon' src='img/empanada.jpg'>
+        <span class="float-r margin-top-10 badge badge-assertive">{{persona.totalEmpanadas()}}</span> 
   	  </h1>
 	  </div>
     
     <!-- Agregar gusto -->
-    <div class="bar bar-subheader">
-     <button class="button button-full button-energized" ng-click="showPopup()">Agregar nuevo gusto</button>
-    </div>
+     <button class="bar bar-subheader button button-full button-energized" ng-click="showPopup()">Agregar nuevo gusto</button>
 
 	<!-- muestro empanadas -->
 	<div class="card" style="width: 43%; margin: 50px 10px 10px 10px; float: left; " ng-repeat="empanada in empanadas">
     	<div class="item item-text-wrap">
-	    	<h2>{{ empanada.nombre }}</h2>
+	    	<h2>{{empanada.nombre}}</h2>
         <p style="style:50%;float:left;" ng-click="persona.addEmpanada(empanada.id)" class="ion-android-add"></p>
         <p style="style:50%;float:right" ng-click="persona.removeEmpanada(empanada.id)" class="ion-android-remove"></p>
         <div style="clear:both;"></div>
-	    	<p>{{ persona.cantEmpanadas(empanada.id) }}</p>
+	    	<p>{{persona.cantEmpanadas(empanada.id)}}</p>
     	</div>
     </div>
 
-  </ion-content>
-</ion-view>
+</ion-content>

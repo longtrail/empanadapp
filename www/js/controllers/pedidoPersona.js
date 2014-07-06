@@ -6,7 +6,7 @@ app.controller('PedidoPersonaCtrl',  ["$scope", "PersonasService", "EmpanadasSer
 	personaNueva = pServ.add('hitler');
 
 	//Recibo persona de la vista de personas
-	//var id = $stateParam(personaId);
+	//var id = $state(personaId);
 
 	/*Para popUp*/
 	popUp.submit = function(data) {
@@ -20,8 +20,5 @@ app.controller('PedidoPersonaCtrl',  ["$scope", "PersonasService", "EmpanadasSer
 	/*Datos a mostrar desde un principio*/
 	$scope.persona = pServ.getPersona(id);
 	$scope.empanadas = eServ.getEmpanadas();
-	$scope.cantEmpanadas = $scope.persona.totalEmpanadas();
-
-	/*Agregar/Sacar empanadas*/
-	
+	$scope.total = $scope.persona.totalEmpanadas();
 }]);
