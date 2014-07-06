@@ -1,19 +1,25 @@
 <ion-view title="Pedido">
   <ion-content class="has-header">
     <button class="button button-block button-energized" ng-click="showPopup()">Agregate papa!</button>
-  	<div ng-hide="personas.length">
+ 	
+    <div ng-if="personas.length == 0">
   		<p>No hay personas</p>
   	</div>
-    <div 
-    	class="card"
-    	style="width: 43%; margin: 20px; float: left;"
-    	ng-repeat="persona in personas"
-    	ng-click="goPersona(persona.id)">
+    
+    <div class="card-container">
+      <div 
+      	class="card card-item"
+      	ng-repeat="persona in personas"
+      	ng-click="goPersona(persona.id)">
 
-    	<div class="item item-text-wrap">
-	    	<h2>{{persona.nombre}}</h2>
-	      <p>{{persona.cantEmpanadas()}}</p>
-    	</div>
+      	<div class="item item-text-wrap">
+  	    	<h2>{{ persona.nombre | summary:20}}</h2>
+  	    	<p>{{ persona.cantEmpanadas() }}</p>
+      	</div>
+
+      </div>
+
     </div>
+
   </ion-content>
 </ion-view>

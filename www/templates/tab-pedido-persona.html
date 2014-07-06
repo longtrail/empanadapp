@@ -13,7 +13,8 @@
      <button class="bar bar-subheader button button-full button-energized" ng-click="showPopup()">Agregar nuevo gusto</button>
 
 	<!-- muestro empanadas -->
-	<div class="card" style="width: 43%; margin: 50px 10px 10px 10px; float: left; " ng-repeat="empanada in empanadas">
+  <div class="card-container">
+  	<div class="card card-item" ng-repeat="empanada in empanadas">
     	<div class="item item-text-wrap">
 	    	<h2>{{empanada.nombre}}</h2>
         <p style="style:50%;float:left;" ng-click="persona.addEmpanada(empanada.id)" class="ion-android-add"></p>
@@ -22,5 +23,5 @@
 	    	<p>{{persona.cantEmpanadas(empanada.id)}}</p>
     	</div>
     </div>
-
+  </div>
 </ion-content>
