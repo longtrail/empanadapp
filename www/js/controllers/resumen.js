@@ -13,7 +13,6 @@ app.controller('ResumenCtrl', ["$scope",'PersonasService','EmpanadasService', fu
   		$scope.resumen = $scope.resumenes[1];
   	}
 
-  	$scope.empanadasGeneral =[{cantidad:"5", gusto:"Carne"},{cantidad:"3",gusto:"pollo"}];
   	var kova = PersonasService.add('Kova');
     kova.addEmpanada(2);
     kova.addEmpanada(2);
@@ -31,7 +30,6 @@ app.controller('ResumenCtrl', ["$scope",'PersonasService','EmpanadasService', fu
 
 
 
-	//$scope.TotalEmpanadas =	
   $scope.togglePersona = function(persona) {
     if ($scope.isPersonaShown(persona)) {
       $scope.shownPersona = null;

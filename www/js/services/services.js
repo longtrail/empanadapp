@@ -171,6 +171,7 @@ app.factory('Persona', ['EmpanadasService', function(EmpanadasService){
       _.forIn(this.empanadas, function(value, key) {
         total += value;
       });
+
       return total;
     }
   }
