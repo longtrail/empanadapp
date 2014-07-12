@@ -1,5 +1,4 @@
-<ion-view title="Resumen">
-  <ion-content class="has-header">
+<ion-content class="has-header">
   <div class="row">
 
     <button 
@@ -10,7 +9,8 @@
         ng-class="{'button-energized': resumen.nombre=='resumenPersonas'}" 
 		ng-click="pedidoPorPersonas()">Resumen x Persona</button>
     <h1 ng-model="listado.nombre"></h1>
-</div>
-<div ng-include="resumen.url"></div>
- </ion-content>
-</ion-view>
+    
+  </div>
+  <div ng-include="resumen.url"></div>
+</ion-content>
+

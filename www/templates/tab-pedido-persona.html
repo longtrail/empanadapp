@@ -14,13 +14,13 @@
 
 	<!-- muestro empanadas -->
   <div class="card-container">
-  	<div class="card card-item" style="margin: 50px 10px 10px 10px;" ng-repeat="empanada in empanadas">
-    	<div class="item item-text-wrap">
+  	<div class="card card-item card-margin" ng-repeat="empanada in empanadas">
+    	<div class="item item-text-wrap" usemap="#empanadaMap">
 	    	<h2>{{empanada.nombre}}</h2>
-        <p style="style:50%;float:left;" ng-click="persona.addEmpanada(empanada.id)" class="ion-android-add"></p>
-        <p style="style:50%;float:right" ng-click="persona.removeEmpanada(empanada.id)" class="ion-android-remove"></p>
-        <div style="clear:both;"></div>
-	    	<p>{{persona.cantEmpanadas(empanada.id)}}</p>
+          <p style="style:50%;float:left;"class="ion-android-add"></p>
+          <p style="style:50%;float:right" ng-click="persona.removeEmpanada(empanada.id)" class="ion-android-remove"></p>
+          <div style="clear:both;"></div>
+  	    	<p>{{persona.cantEmpanadas(empanada.id)}}</p>
     	</div>
     </div>
   </div>

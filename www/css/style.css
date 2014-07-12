@@ -16,6 +16,7 @@
 	margin-left:10px;
 }
 
+/*Cards*/
 .card-container {
 	text-align: center;
 }
@@ -24,4 +25,17 @@
 	display: inline-block;
 	width: 200px;
 	margin: 2px;
+}
+
+.card-margin{
+	margin: 50px 10px 10px 10px;
+}
+
+.left-box{
+	width:50%;
+	float:left;
+}
+
+.right-box{
+	width:50%;
 }

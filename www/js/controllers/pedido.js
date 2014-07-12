@@ -1,20 +1,20 @@
 var app = angular.module('empanadapp');
-app.controller('PedidoCtrl', ["$scope", "PersonasService", "PopUpBuilder", "$state", function($scope, Personas, PopUpBuilder, $state) {
-	$scope.personas = Personas.getPersonas();
+app.controller('PedidoCtrl', ["$scope", "PersonasService", "PopUpBuilder", "$state", function($scope, personasServ, PopUpBuilder, $state) {
 
-	$scope.agregar = Personas.add;
-
-	//cambia de tab a pedidoPersona al agregar nueva persona
+	/*Cambio de tab a pedido-persona y envio el ID de la persona*/
 	$scope.goPersona = function(id){
-		$state.go('tab.pedido-persona', {personaId: id})
+		$state.go('tab.pedido-persona', {personaId: id});
 	};
 
+	/*Seteo valores del Pop Up*/
 	PopUpBuilder.submit = function(data) {
-    return $scope.agregar(data); 
-  };
-  PopUpBuilder.placeholder = "Escribi el nombre de la persona";
-  PopUpBuilder.title = "Agregar persona";
+    	return personasServ.add(data);
+  	};
+  	PopUpBuilder.placeholder = "Escribi el nombre de la persona";
+ 	PopUpBuilder.title = "Agregar persona";
+	$scope.showPopup = PopUpBuilder.build;
 
-	$scope.showPopup = PopUpBuilder.build // Returns the function	
+	/*Datos a mostrar*/
+	$scope.personas = personasServ.getPersonas();
 }]);
 
