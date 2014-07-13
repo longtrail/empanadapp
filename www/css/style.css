@@ -16,6 +16,10 @@
 	margin-left:10px;
 }
 
+.padding-0{
+	padding:0;
+}
+
 /*Cards*/
 .card-container {
 	text-align: center;
@@ -27,15 +31,38 @@
 	margin: 2px;
 }
 
-.card-margin{
-	margin: 50px 10px 10px 10px;
+.card-item-gustos {
+	display: inline-block;
+	width: 150px;
+	margin: 2px;
 }
 
-.left-box{
-	width:50%;
-	float:left;
+.card-margin-top{
+	margin-top: 50px;
 }
 
-.right-box{
+/*Pedido-Persona*/
+.button-add-remove{
+	font-size:25px;
+	height:50px;
 	width:50%;
+}
+.button-add{
+	color:green;
+}
+
+.button-remove{
+	color:red;
+}
+
+.subTotal-empanadas{
+	display: inline-block !important;
+	position: static !important;
+	margin:3px;
+}
+
+/*Pedido*/
+.error-personas{
+	margin:20px;
+	color:red;
 }

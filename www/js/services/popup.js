@@ -35,9 +35,9 @@ app.service('PopUpBuilder', ['$ionicPopup', '$rootScope', function($ionicPopup, 
       title: this.title,
       scope: scope,
       buttons: [
-        { text: 'Cancel' },
+        { text: 'Cancelar' },
         {
-          text: '<b>Save</b>',
+          text: '<b>Agregar</b>',
           type: 'button-energized',
           onTap: submitCallback
         },

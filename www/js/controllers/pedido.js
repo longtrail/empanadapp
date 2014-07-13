@@ -16,5 +16,10 @@ app.controller('PedidoCtrl', ["$scope", "PersonasService", "PopUpBuilder", "$sta
 
 	/*Datos a mostrar*/
 	$scope.personas = personasServ.getPersonas();
+
+	/*Seteo swipes*/
+	$scope.swipeLeft = function(id){
+		$state.go('tab.costos');
+	};
 }]);
 

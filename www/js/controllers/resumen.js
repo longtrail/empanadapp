@@ -1,5 +1,5 @@
 var app = angular.module('empanadapp');
-app.controller('ResumenCtrl', ["$scope",'PersonasService','EmpanadasService','Costos', function($scope, PersonasService,EmpanadasService, Costos) {
+app.controller('ResumenCtrl', ["$scope",'PersonasService','EmpanadasService','Costos', "$state", function($scope, PersonasService,EmpanadasService, Costos, $state) {
   $scope.costos = Costos.getCostos();
 
 	$scope.resumenes =
@@ -48,4 +48,8 @@ app.controller('ResumenCtrl', ["$scope",'PersonasService','EmpanadasService','Co
   };
   
 
+  /*Seteo swipes*/
+  $scope.swipeRight = function(id){
+    $state.go('tab.costos');
+  };
 }]);

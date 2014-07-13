@@ -1,8 +1,12 @@
-  <ion-content class="has-header">
-    <button class="button button-block button-energized" ng-click="showPopup()">Agregate papa!</button>
+  <ion-content class="has-header" on-swipe-left="swipeLeft()">
+    <button class="button button-block button-energized" ng-click="showPopup()">
+      <i class="ion-plus-round"></i>
+      Nueva Persona
+    </button>
  	
-    <div ng-if="personas.length == 0">
-  		<p>No hay personas</p>
+    <div class="error-personas" ng-if="personas.length == 0">
+      <i class="icon ion-sad float-l">
+  		<p class="float-r"> No hay ninguna persona cargada!</p>
   	</div>
     
     <div class="card-container">

@@ -1,5 +1,5 @@
 var app = angular.module('empanadapp');
-app.controller('PedidoPersonaCtrl',  ["$scope", "PersonasService", "EmpanadasService", "PopUpBuilder", "$stateParams", function($scope, personasServ, empanadasServ, popUp, $stateParams) {
+app.controller('PedidoPersonaCtrl',  ["$scope", "PersonasService", "EmpanadasService", "PopUpBuilder", "$state", "$stateParams", function($scope, personasServ, empanadasServ, popUp, $state, $stateParams) {
 
 	//seteo ID de la persona que recibo
 	//var id = $stateParams.personaId;
@@ -11,12 +11,17 @@ app.controller('PedidoPersonaCtrl',  ["$scope", "PersonasService", "EmpanadasSer
 	popUp.submit = function(data) {
    	 return empanadasServ.add(data); 
   	};
-  	popUp.placeholder = "Escribi el nombre del gusto";
- 	popUp.title = "Agregar Gusto";
+  	popUp.placeholder = "Escribe aquí";
+ 	popUp.title = "Ingrese gusto";
 	$scope.showPopup = popUp.build;
 
 	/*Datos header*/
 	$scope.persona = personasServ.getPersona(id);
 	$scope.empanadas = empanadasServ.getEmpanadas();
 	$scope.total = $scope.persona.totalEmpanadas();
+
+	/*Seteo swipes*/
+	$scope.swipeLeft = function(id){
+		$state.go('tab.costos');
+	};
 }]);
