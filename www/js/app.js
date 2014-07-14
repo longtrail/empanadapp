@@ -57,6 +57,7 @@ angular.module('empanadapp', ['ionic'])
         }
       }
     })
+
     .state('tab.pedido-persona', {
       url: '/pedido/:personaId',
       views: {

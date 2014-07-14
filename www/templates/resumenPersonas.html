@@ -1,21 +1,16 @@
-
 <ion-list>
-<div ng-repeat="persona in personas">
-	<ion-item class="item-stable"
-	ng-click="togglePersona(persona)"
-	ng-class="{active: isPersonaShown(persona)}">
-	<i class="icon" ng-class="isPersonaShown(persona) ? 'ion-minus' : 'ion-plus'"></i>
-	&nbsp;
-	{{persona.nombre}}
-	<span class="item-note">
-      Total: <b>{{persona.totalEmpanadas()*(costos.unitario)+costos.extra/cantPersonas | currency}}</b>
-    </span>
-</ion-item>
-<ion-item class="item-accordion"
-ng-repeat="empanada in persona.getEmpanadas()"
-ng-show="isPersonaShown(persona)">
-<span class="badge badge-assertive">{{empanada.cantidad}}</span>
-{{empanada.nombre}}
-</ion-item>
-</div>
+	<div ng-repeat="persona in personas">
+		<ion-item class="item-stable" ng-click="togglePersona(persona)" ng-class="{active: isPersonaShown(persona)}">
+			<i class="icon" ng-class="isPersonaShown(persona) ? 'ion-minus' : 'ion-plus'"></i>
+			{{persona.nombre}}
+			<span class="item-note">
+				Total: <b>{{persona.totalEmpanadas()*(costos.unitario)+costos.extra/cantPersonas | currency}}</b>
+			</span>
+		</ion-item>
+
+		<ion-item class="item-accordion" ng-repeat="empanada in persona.getEmpanadas()" ng-show="isPersonaShown(persona)">
+			<span class="badge badge-assertive">{{empanada.cantidad}}</span>
+			{{empanada.nombre}}
+		</ion-item>
+	</div>
 </ion-list>

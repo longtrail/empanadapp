@@ -1,25 +1,26 @@
-  <ion-content class="has-header" on-swipe-left="swipeLeft()">
-    <button class="button button-block button-energized" ng-click="showPopup()">
-      <i class="ion-plus-round"></i>
-      Nueva Persona
-    </button>
- 	
-    <div class="error-personas" ng-if="personas.length == 0">
-      <i class="icon ion-sad float-l">
-  		<p class="float-r"> No hay ninguna persona cargada!</p>
-  	</div>
-    
-    <div class="card-container">
-      <div 
-      	class="card card-item"
-      	ng-repeat="persona in personas"
-      	ng-click="goPersona(persona.id)">
-
-      	<div class="item item-text-wrap">
-  	    	<h2>{{ persona.nombre | summary:20}}</h2>
-  	    	<p>{{ persona.cantEmpanadas() }}</p>
-      	</div>
-
-      </div>
+<ion-content class="has-header" on-swipe-left="swipeLeft()">
+  <button class="button button-block button-energized" ng-click="showPopup()">
+    <i class="ion-plus-round"></i>
+    Nueva Persona
+  </button>
+	
+  <!--Error de ninguna persona-->
+  <div class="list card" ng-if="personas.length == 0">
+    <div class="item item-icon-left">
+      <i class="icon ion-sad"></i>
+		  <p> No hay ninguna persona cargada!</p>
     </div>
-  </ion-content>
+	</div>
+  
+  <!-- Cards de personas -->
+  <div class="card-container">
+    <div class="card card-item" ng-repeat="persona in personas" ng-click="goPersona(persona.id)">
+
+      <div class="item item-text-wrap">
+  	    <h2>{{ persona.nombre | summary:20}}</h2> 
+        <span class="badge badge-energized margin-top-10 subTotal-empanadas">{{persona.totalEmpanadas()}} Empanadas</span>
+      </div>
+
+    </div>
+  </div>
+</ion-content>

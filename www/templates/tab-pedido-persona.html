@@ -1,9 +1,9 @@
 <ion-content class="has-header" on-swipe-left="swipeLeft()">
-
+  
     <!-- header datos persona -->
     <div class="bar bar-header bar-stable">
   	  <h1 class="title">
-  	  	<span class='float-l'><i class="icon ion-happy"></i> {{persona.nombre}} </span>
+  	  	<span class='float-l'><i class="icon ion-happy"></i> {{persona.nombre}}</span>
         <img class='float-r margin-top-10 empanada-icon' src='img/empanada.jpg'>
         <span class="float-r margin-top-10 badge badge-energized">{{persona.totalEmpanadas()}}</span> 
   	  </h1>
@@ -17,19 +17,19 @@
 
 	<!-- muestro empanadas -->
   <div class="card-container card-margin-top">
-  	<div class="card card-item-gustos " ng-repeat="empanada in empanadas">
+  	<div class="card card-item" ng-repeat="empanada in empanadas">
     	<div class="item item-text-wrap padding-0">
 
 	    	<h2>{{empanada.nombre}}</h2>
         <button class="button button-outline button-balanced button-add button-add-remove float-l" 
                 ng-click="persona.addEmpanada(empanada.id)">+</button>
         <button class="button button-outline button-assertive button-remove  button-add-remove float-r"
-                ng-click="persona.removeEmpanada(empanada.id)">- </button>
+                ng-click="persona.removeEmpanada(empanada.id)">-</button>
         <div style="clear:both;"></div>
   	   <div class="badge badge-energized subTotal-empanadas">{{persona.cantEmpanadas(empanada.id)}}</div>
 
     	</div>
-      
     </div>
   </div>
+
 </ion-content>

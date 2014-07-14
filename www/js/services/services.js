@@ -1,8 +1,9 @@
 var app = angular.module('empanadapp');
 
+/*Service que maneja los costos*/
 app.factory('Costos', [function(){
   var costo = {
-    unitario: 0,
+    unitario: 10,
     extra: 0
   }
 
@@ -107,7 +108,7 @@ app.factory('PersonasService', ["Persona", function(Persona){
       /* Retorna la persona cuyo id sea el enviado*/
       getPersona: function (id) {
          return _(personas).find(function (e) {
-            return e.id === id;
+            return e.id == id;
          });
       },
 

@@ -1,7 +1,36 @@
 <div class="list">
 
-  <div ng-repeat="(gusto, cantidad) in getEmpanadasGeneral()" class="item ">
-  	{{gusto}}
-	<span class="badge badge-assertive">{{cantidad}}</span>
-  </div>
+	<!-- Listar gustos de empanada -->
+  	<div ng-repeat="(gusto, cantidad) in empanadasGeneral()" class="item">
+  		{{gusto}}
+		<span class="badge badge-energized">{{cantidad}}</span>
+    </div>
+	
+	<!-- Lista el total de empanadas -->
+	<div class="item">
+		<b>Total</b>
+  		<span class="badge badge-assertive">{{ empanadasCantidadTotal() }} Empanadas</span>
+	</div>
+
+	<!-- Sub total por empanadas -->
+	<div class="item">
+  		<span class="item-note">
+			Sub Total empanadas: <b>{{ empanadasSubTotal | currency}}</b>
+		</span>
+	</div>
+
+	<!-- Sub total gastos extra -->
+	<div class="item">
+  		<span class="item-note">
+			Gastos extra: <b>{{ costos.extra | currency}}</b>
+		</span>
+	</div>
+
+	<!-- Total a pagar -->
+	<div class="item">
+  		<span class="item-note">
+			<b>Total: {{ total | currency}}</b>
+		</span>
+	</div>
+
 </div>

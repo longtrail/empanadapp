@@ -6,6 +6,9 @@
 	float:right;
 }
 
+.float-c{
+	float:center;
+}
 .margin-top-10{
 	margin-top:10px;
 }
@@ -26,12 +29,6 @@
 }
 
 .card-item {
-	display: inline-block;
-	width: 200px;
-	margin: 2px;
-}
-
-.card-item-gustos {
 	display: inline-block;
 	width: 150px;
 	margin: 2px;
@@ -59,10 +56,4 @@
 	display: inline-block !important;
 	position: static !important;
 	margin:3px;
-}
-
-/*Pedido*/
-.error-personas{
-	margin:20px;
-	color:red;
 }

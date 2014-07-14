@@ -1,6 +1,7 @@
 <ion-content class="has-header" on-swipe-right="swipeRight()">
+ 
+  <!-- Seleccion de tipo de resumen -->
   <div class="row">
-
     <button 
     	class="button col col-50" 
     	ng-class="{'button-energized': resumen.nombre=='resumenGeneral'}" 
@@ -9,8 +10,9 @@
         ng-class="{'button-energized': resumen.nombre=='resumenPersonas'}" 
 		ng-click="pedidoPorPersonas()">Resumen x Persona</button>
     <h1 ng-model="listado.nombre"></h1>
-    
   </div>
+
+  <!--Muestro resumen seleccionado -->
   <div ng-include="resumen.url"></div>
 </ion-content>
 
