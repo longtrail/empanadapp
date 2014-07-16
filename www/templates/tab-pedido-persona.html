@@ -10,10 +10,12 @@
 	  </div>
     
     <!-- Agregar gusto -->
-     <button class="bar bar-subheader button button-full button-energized" ng-click="showPopup()">
-      <i class="ion-plus-round"></i>
-      Nuevo Gusto
-    </button>
+    <div class="row">
+      <button class="bar bar-subheader button col col-100 button-full button-energized" ng-click="showPopup()">
+        <i class="ion-plus-round"></i>
+        Nuevo Gusto
+      </button>
+    </div>
 
 	<!-- muestro empanadas -->
   <div class="card-container card-margin-top">
@@ -21,10 +23,10 @@
     	<div class="item item-text-wrap padding-0">
 
 	    	<h2>{{empanada.nombre}}</h2>
-        <button class="button button-outline button-balanced button-add button-add-remove float-l" 
-                ng-click="persona.addEmpanada(empanada.id)">+</button>
-        <button class="button button-outline button-assertive button-remove  button-add-remove float-r"
+        <button class="button button-outline button-assertive button-remove  button-add-remove float-l"
                 ng-click="persona.removeEmpanada(empanada.id)">-</button>
+        <button class="button button-outline button-balanced button-add button-add-remove float-r" 
+                ng-click="persona.addEmpanada(empanada.id)">+</button>
         <div style="clear:both;"></div>
   	   <div class="badge badge-energized subTotal-empanadas">{{persona.cantEmpanadas(empanada.id)}}</div>
 

@@ -1,14 +1,16 @@
 <ion-content class="has-header" on-swipe-left="swipeLeft()">
-  <button class="button button-block button-energized" ng-click="showPopup()">
-    <i class="ion-plus-round"></i>
-    Nueva Persona
-  </button>
+  <div class="row">
+    <button class="button col col-100 button-energized" ng-click="showPopup()">
+      <i class="ion-plus-round"></i>
+      Nueva Persona
+    </button>
+  </div>
 	
   <!--Error de ninguna persona-->
   <div class="list card" ng-if="personas.length == 0">
-    <div class="item item-icon-left">
-      <i class="icon ion-sad"></i>
-		  <p> No hay ninguna persona cargada!</p>
+    <div class="item centered-content">
+      <p><i class="icon ion-sad"></i></p>
+      <p> No hay ninguna persona cargada!</p>
     </div>
 	</div>
   

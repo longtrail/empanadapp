@@ -57,3 +57,18 @@
 	position: static !important;
 	margin:3px;
 }
+
+.centered-content {
+	text-align: center;
+}
+
+.centered-content .icon {
+	font-size: 32px
+}
+
+.icon-empanada {
+	width: 32px;
+	height: 16px !important;
+	border-radius: 32px 32px 0 0;
+	background: black;
+}
